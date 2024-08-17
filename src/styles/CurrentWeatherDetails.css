@@ -1,0 +1,49 @@
+.parameter-label {
+    font-size: 14px; /* Smaller label size */
+    color: #89c2ff;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.parameter-value {
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: auto;
+    margin-bottom: 6px;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.humidity, .wind, .pressure, .feels {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align contents to the left */
+    justify-content: space-between; /* Space out the label and value */
+    width: 200px;
+    height: auto; /* Make sure the height matches the forecast table row height */
+    border-radius: 5px;
+    background-color: #4478bdc6;
+    margin: 5px;
+    margin-left: 25px;
+    padding: 13.8px; /* Adjust padding to position content better */
+}
+
+.wind {
+    order: 1;
+}
+
+.feels {
+    order: 2;
+}
+
+.humidity {
+    order: 3;
+}
+
+.pressure {
+    order: 4;
+}

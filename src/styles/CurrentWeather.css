@@ -1,0 +1,125 @@
+.current-weather {
+    width: 300px;
+}
+
+.top {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.city {
+    font-size: 32px;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1;
+
+    margin: 0;
+}
+
+.temperature {
+    font-size: 64px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+
+    margin: 10px 0;
+}
+
+.weather-description {
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 1;
+    margin: 0;
+}
+
+.temp-range, .min-temp, .max-temp, .humidity, .wind, .pressure {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.max-temp {
+    margin-right: 10px;
+}
+
+.parameter-label,
+.parameter-value {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.parameter-label {
+    margin-right: 5px;
+}
+
+.bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.humidity, .wind, .pressure, .feels {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #4478bdc6;
+    margin: 10px;
+    padding: 10px;
+}
+.wind {
+    order: 1;
+}
+.wind .parameter-label {
+    color: #89c2ff;
+}
+.wind .parameter-value {
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+}
+.feels {
+    order: 2;
+}
+.feels .parameter-label {
+    color: #89c2ff;
+}
+.feels .parameter-value {
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+}
+.humidity {
+    order: 3;
+}
+.humidity .parameter-label {
+    color: #89c2ff;
+}
+.humidity .parameter-value {
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+}
+.pressure {
+    order: 4;
+}
+.pressure .parameter-label {
+    color: #89c2ff;
+}
+.pressure .parameter-value {
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+}
+
