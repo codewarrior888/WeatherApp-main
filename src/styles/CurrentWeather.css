@@ -2,7 +2,7 @@
     width: 300px;
 }
 
-.top {
+.info {
     flex-direction: column;
     display: flex;
     align-items: center;

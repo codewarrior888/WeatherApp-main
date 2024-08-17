@@ -13,12 +13,17 @@ html, body {
     margin: 20px auto;
 }
 
+.top-row {  
+    display: flex;
+    justify-content: center;
+}
+
 .search-bar {
     grid-row: 1 / 2;
     justify-self: center;
     width: 100%;
     max-width: 300px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .current-weather {

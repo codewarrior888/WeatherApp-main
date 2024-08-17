@@ -3,16 +3,42 @@ import { AsyncPaginate } from 'react-select-async-paginate';
 import axios from 'axios';
 import { citySearchApi } from '../components/api';
 
+import '../styles/CitySearch.css';
+
 interface CitySearchProps {
   onCitySelect: (lat: number, lon: number) => void;
 }
+
+const customStyles = {
+  control: (provided: any) => ({
+    ...provided,
+    boxShadow: 'none',
+    padding: '0.2rem',
+    fontSize: '14px',
+  }),
+  input: (provided: any) => ({
+    ...provided,
+    fontSize: '18px',
+  }),
+  menu: (provided: any) => ({
+    ...provided,
+    backgroundColor: '#f8f9fa',
+  
+  }),
+  option: (provided: any, state: any) => ({
+    ...provided,
+    padding: '0.5rem',
+    backgroundColor: state.isSelected ? '#007BFF' : state.isFocused ? '#e9ecef' : '#fff',
+    color: state.isSelected ? '#fff' : '#007BFF',
+  }),
+};
 
 const CitySearch: React.FC<CitySearchProps> = ({ onCitySelect }) => {
   const [searchValue, setSearchValue] = React.useState(null);
   const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
   const loadOptions = async (inputValue: string) => {
-    if (!inputValue) return { options: [] }; // Ensure input is provided
+    if (!inputValue) return { options: [] };
 
     try {
       const response = await axios.get(
@@ -40,11 +66,12 @@ const CitySearch: React.FC<CitySearchProps> = ({ onCitySelect }) => {
 
   return (
     <AsyncPaginate
-      placeholder="Search for a city"
+      placeholder="Share your location or enter the city"
       value={searchValue}
       debounceTimeout={500}
       onChange={handleOnChange}
       loadOptions={loadOptions}
+      styles={customStyles}
     />
   );
 };
