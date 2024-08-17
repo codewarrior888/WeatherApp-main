@@ -13,20 +13,20 @@ const CurrentWeather: React.FC<CurrentWeatherDetailsProps> = ({data}) => {
         <div className="current-weather">
             <div className="details">
                 <div className="humidity">
-                    <p className="parameter-label">Humidity:</p>
-                    <p className="parameter-value">{data.main.humidity}%</p>
+                    <p className="details-label">Humidity:</p>
+                    <p className="details-value">{data.main.humidity}%</p>
                 </div>
                 <div className="wind">
-                    <p className="parameter-label">Wind:</p>
-                    <p className="parameter-value">{data.wind.speed} m/s</p>
+                    <p className="details-label">Wind:</p>
+                    <p className="details-value">{data.wind.speed} m/s</p>
                 </div>
                 <div className="feels">
-                    <p className="parameter-label">Feels like:</p>
-                    <p className="parameter-value">{data.main.feels_like} m/s</p>
+                    <p className="details-label">Feels like:</p>
+                    <p className="details-value">{data.main.feels_like} m/s</p>
                 </div>
                 <div className="pressure">
-                    <p className="parameter-label">Pressure:</p>
-                    <p className="parameter-value">{data.main.pressure} hPa</p>
+                    <p className="details-label">Pressure:</p>
+                    <p className="details-value">{data.main.pressure} hPa</p>
                 </div>
             </div>
         </div>

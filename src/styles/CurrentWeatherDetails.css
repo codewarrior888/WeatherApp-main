@@ -1,16 +1,16 @@
-.parameter-label {
-    font-size: 14px; /* Smaller label size */
+.details-label {
+    font-size: 14px;
     color: #89c2ff;
     margin-top: auto;
-    margin-bottom: 10px;
+    margin-bottom: auto;
 }
 
-.parameter-value {
+.details-value {
     font-size: 30px;
     font-weight: 500;
     color: #ffffff;
-    margin-top: auto;
-    margin-bottom: 6px;
+    padding-top:7px;
+    margin: 0;
 }
 
 .details {
