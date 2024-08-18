@@ -1,0 +1,65 @@
+@import 'colors';
+
+.details-label {
+  font-size: 14px;
+  color: $light-blue;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.details-value {
+  font-size: 30px;
+  font-weight: 500;
+  color: $white;
+  padding-top: 7px;
+  margin: 0;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.humidity, .wind, .pressure, .feels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+  background-color: $dark-blue-transparent;
+  margin: 5px;
+  margin-left: 25px;
+  padding: 13.8px;
+}
+
+.wind {
+  order: 1;
+}
+
+.feels {
+  order: 2;
+}
+
+.humidity {
+  order: 3;
+}
+
+.pressure {
+  order: 4;
+}
+
+@media screen and (max-width: 600px) {
+  .details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20px;
+  }
+
+  .humidity, .wind, .pressure, .feels {
+    width: 220px;
+    margin: 5px;
+    padding: 13.8px;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import '../styles/CurrentWeatherDetails.css';
+import '../styles/CurrentWeatherDetails.scss';
 
 
 interface CurrentWeatherDetailsProps {

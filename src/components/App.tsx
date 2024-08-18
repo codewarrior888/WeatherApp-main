@@ -9,7 +9,7 @@ import LocationButton from './LocationButton';
 import RefreshButton from './RefreshButton';
 import { forecastApi, weatherApi } from '../components/api';
 
-import '../styles/App.css';
+import '../styles/App.scss';
 
 const App: React.FC = () => {
 

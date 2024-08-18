@@ -1,6 +1,6 @@
 import React from 'react';
 import { TbLocation } from "react-icons/tb";
-import '../styles/LocationButton.css';
+import '../styles/LocationButton.scss';
 
 interface LocationButtonProps {
   onLocationClick: () => void;

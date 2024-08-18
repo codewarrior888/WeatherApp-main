@@ -1,7 +1,7 @@
 import React from "react";
 import { weatherIconApi } from "../components/api";
 
-import '../styles/CurrentWeather.css';
+import '../styles/CurrentWeather.scss';
 
 
 interface CurrentWeatherProps {

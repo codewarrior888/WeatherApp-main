@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdRefresh } from "react-icons/md";
-import '../styles/RefreshButton.css';
+import '../styles/RefreshButton.scss';
 
 interface RefreshButtonProps {
   onRefreshClick: () => void;

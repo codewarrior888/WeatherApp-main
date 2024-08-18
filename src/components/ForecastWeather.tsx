@@ -1,6 +1,6 @@
 import React from "react";
 import { weatherIconApi } from "../components/api";
-import '../styles/ForecastWeather.css';
+import '../styles/ForecastWeather.scss';
 
 interface ForecastWeatherProps {
     data: any;

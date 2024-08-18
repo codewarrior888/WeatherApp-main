@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
@@ -22,15 +21,11 @@ module.exports = {
         loader: 'ts-loader',
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
-          {
-            loader: 'style-loader',
-            options: {
-              esModule: true,
-            },
-          },
+          'style-loader',
           'css-loader',
+          'sass-loader',
         ],
       },
     ],
@@ -38,9 +33,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
     }),
     new Dotenv(),
   ],

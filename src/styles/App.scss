@@ -1,0 +1,93 @@
+@import 'colors';
+
+$max-container-width: 800px;
+$gap-large: 20px;
+$gap-small: 10px;
+$margin-large: 20px;
+$margin-small: 5px;
+$max-search-width: 300px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: $background-color;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: $gap-large;
+  max-width: $max-container-width;
+  margin: $margin-large auto;
+}
+
+.top-row {  
+  @include flex-center;
+  margin: $margin-small 0;
+}
+
+.title {
+  grid-row: 1 / 2;
+}
+
+.search-bar {
+  grid-row: 2 / 3;
+  justify-self: center;
+  width: 100%;
+  max-width: $max-search-width;
+  margin-bottom: 30px;
+}
+
+.current-weather {
+  grid-row: 3 / 4;
+  justify-self: center;
+}
+
+.third-row {
+  grid-row: 4 / 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $gap-large;
+  margin-left: 70px;
+}
+
+.left-column {
+  grid-column: 1 / 2;
+}
+
+.right-column {
+  grid-column: 2 / 3;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin: $margin-large auto;
+    gap: $gap-small;
+  }
+
+  .top-row {
+    margin: 0 $margin-large;
+  }
+
+  .third-row {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-bottom: $margin-large;
+  }
+
+  .left-column,
+  .right-column {
+    grid-column: 1 / 2;
+  }
+
+  .left-column {
+    width: 85%;
+    margin: 0 $margin-large;
+  }
+}

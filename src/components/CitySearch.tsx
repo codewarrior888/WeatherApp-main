@@ -3,8 +3,6 @@ import { AsyncPaginate } from 'react-select-async-paginate';
 import axios from 'axios';
 import { citySearchApi } from '../components/api';
 
-import '../styles/CitySearch.css';
-
 interface CitySearchProps {
   onCitySelect: (lat: number, lon: number) => void;
 }

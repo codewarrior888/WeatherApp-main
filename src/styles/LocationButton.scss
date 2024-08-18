@@ -1,0 +1,21 @@
+@import 'colors';
+
+.location-button {
+  color: $button-color;
+  font-size: 30px;
+  border: 1.5px solid $button-color;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 5px 10px 0;
+
+  &:hover {
+    background-color: $button-hover-color;
+    color: $button-hover-text-color;
+  }
+}
