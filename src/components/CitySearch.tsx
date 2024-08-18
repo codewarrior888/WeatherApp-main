@@ -12,7 +12,7 @@ const customStyles = {
     ...provided,
     boxShadow: 'none',
     padding: '0.2rem',
-    fontSize: '14px',
+    fontSize: '12px',
   }),
   input: (provided: any) => ({
     ...provided,
@@ -26,8 +26,8 @@ const customStyles = {
   option: (provided: any, state: any) => ({
     ...provided,
     padding: '0.5rem',
-    backgroundColor: state.isSelected ? '#007BFF' : state.isFocused ? '#e9ecef' : '#fff',
-    color: state.isSelected ? '#fff' : '#007BFF',
+    backgroundColor: state.isSelected ? '#007BFF' : state.isFocused ? '#6290cb' : '#fff',
+    color: state.isSelected ? '#fff' : state.isFocused ? '#fff' : '#000',
   }),
 };
 
