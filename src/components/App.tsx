@@ -13,7 +13,7 @@ import '../styles/App.css';
 
 const App: React.FC = () => {
 
-  // Запрос погоды по городу
+  // Запросить погоду по городу
   const [currentWeather, setCurrentWeather] = React.useState(null);
   const [forecastWeather, setForecastWeather] = React.useState(null);
 
@@ -35,14 +35,14 @@ const App: React.FC = () => {
         setCurrentWeather(currentWeatherData);
         setForecastWeather(forecastWeatherData);
   
-        // Save to localStorage with a timestamp
+        // Сохранить данные в localStorage
         localStorage.setItem('currentWeather', JSON.stringify({ data: currentWeatherData, timestamp: currentTime }));
         localStorage.setItem('forecastWeather', JSON.stringify({ data: forecastWeatherData, timestamp: currentTime }));
       })
       .catch((error) => {console.log(error);});
   };
 
-  // Кэширование на 1 час
+  // Закэшировать данные на 1 час
   
   React.useEffect(() => {
     const cachedCurrentWeather = localStorage.getItem('currentWeather');
@@ -64,7 +64,7 @@ const App: React.FC = () => {
     }
   }, []);
   
-  // Геолокация по клику
+  // Определить геолокацию по клику
   const handleLocationClick = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
@@ -76,7 +76,7 @@ const App: React.FC = () => {
   };
 
   
-  // Обновление погоды по клику
+  // Обновить погоду по клику
   const handleRefreshClick = () => {
     const cachedCurrentWeather = localStorage.getItem('currentWeather');
     const cachedForecastWeather = localStorage.getItem('forecastWeather');
@@ -86,7 +86,8 @@ const App: React.FC = () => {
       handleOnSearchChange(lat, lon);
     }
   };
-
+  
+  // Вывести данные
   return (
     <div className="container">
       <div className="title"><Header /></div>
