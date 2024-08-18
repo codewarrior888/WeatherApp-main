@@ -1,16 +1,19 @@
 import React from 'react';
 
+import Header from './Header';
 import CitySearch from './CitySearch';
 import CurrentWeather from './CurrentWeather';
 import CurrentWeatherDetails from './CurrentWeatherDetails';
 import ForecastWeather from './ForecastWeather';
 import LocationButton from './LocationButton';
+import RefreshButton from './RefreshButton';
 import { forecastApi, weatherApi } from '../components/api';
 
 import '../styles/App.css';
 
 const App: React.FC = () => {
 
+  // Запрос погоды по городу
   const [currentWeather, setCurrentWeather] = React.useState(null);
   const [forecastWeather, setForecastWeather] = React.useState(null);
 
@@ -38,11 +41,13 @@ const App: React.FC = () => {
       })
       .catch((error) => {console.log(error);});
   };
+
+  // Кэширование на 1 час
   
   React.useEffect(() => {
     const cachedCurrentWeather = localStorage.getItem('currentWeather');
     const cachedForecastWeather = localStorage.getItem('forecastWeather');
-    const cacheExpiry = 60 * 60 * 1000; // 1 hour
+    const cacheExpiry = 60 * 60 * 1000;
   
     if (cachedCurrentWeather) {
       const { data, timestamp } = JSON.parse(cachedCurrentWeather);
@@ -59,7 +64,7 @@ const App: React.FC = () => {
     }
   }, []);
   
-
+  // Геолокация по клику
   const handleLocationClick = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
@@ -70,13 +75,27 @@ const App: React.FC = () => {
     });
   };
 
+  
+  // Обновление погоды по клику
+  const handleRefreshClick = () => {
+    const cachedCurrentWeather = localStorage.getItem('currentWeather');
+    const cachedForecastWeather = localStorage.getItem('forecastWeather');
+  
+    if (cachedCurrentWeather && cachedForecastWeather) {
+      const { data: { coord: { lat, lon } } } = JSON.parse(cachedCurrentWeather);
+      handleOnSearchChange(lat, lon);
+    }
+  };
+
   return (
     <div className="container">
+      <div className="title"><Header /></div>
       <div className="top-row">
         <div className="search-bar">
           <CitySearch onCitySelect={handleOnSearchChange} />
         </div>
         <LocationButton onLocationClick={handleLocationClick} />
+        <RefreshButton onRefreshClick={handleRefreshClick} />
       </div>
 
       <div className="current-weather">

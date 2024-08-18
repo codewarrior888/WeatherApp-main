@@ -16,10 +16,15 @@ html, body {
 .top-row {  
     display: flex;
     justify-content: center;
+    margin: 5px 0;
+}
+
+.title {
+    grid-row: 1 / 2;
 }
 
 .search-bar {
-    grid-row: 1 / 2;
+    grid-row: 2 / 3;
     justify-self: center;
     width: 100%;
     max-width: 300px;
@@ -27,12 +32,12 @@ html, body {
 }
 
 .current-weather {
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     justify-self: center;
 }
 
 .third-row {
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -53,6 +58,10 @@ html, body {
         gap: 10px;
     }
 
+    .top-row {
+        margin: 0 20px;
+    }
+
     .third-row {
         grid-template-columns: 1fr;
         margin-left: 0;
@@ -62,11 +71,10 @@ html, body {
     .left-column,
     .right-column {
         grid-column: 1 / 2;
-        width: 100%;
     }
 
     .left-column {
-        width: 77%;
+        width: 85%;
         margin: 0 20px;
     }
 }

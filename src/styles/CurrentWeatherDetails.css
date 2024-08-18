@@ -21,15 +21,15 @@
 .humidity, .wind, .pressure, .feels {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align contents to the left */
-    justify-content: space-between; /* Space out the label and value */
+    align-items: flex-start;
+    justify-content: space-between;
     width: 200px;
-    height: auto; /* Make sure the height matches the forecast table row height */
+    height: auto;
     border-radius: 5px;
     background-color: #4478bddb;
     margin: 5px;
     margin-left: 25px;
-    padding: 13.8px; /* Adjust padding to position content better */
+    padding: 13.8px;
 }
 
 .wind {
@@ -46,4 +46,25 @@
 
 .pressure {
     order: 4;
+}
+
+@media screen and (max-width: 600px) {
+
+    .details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: 20px;
+    }
+
+    .humidity, .wind, .pressure, .feels {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 220px;
+        height: auto;
+        margin: 5px;
+        padding: 13.8px;
+    }
+    
 }

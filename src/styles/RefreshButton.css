@@ -1,0 +1,19 @@
+.refresh-button {
+    color: #ffffff;
+    font-size: 30px;
+    border: 1.5px solid #ffffff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 5px 0;
+  }
+
+  .refresh-button:hover {
+    background-color: #ffffff;
+    color: #4478bddb;
+  }
