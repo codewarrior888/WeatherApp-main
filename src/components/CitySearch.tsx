@@ -1,7 +1,7 @@
 import React from 'react';
 import { AsyncPaginate } from 'react-select-async-paginate';
 import axios from 'axios';
-import { citySearchApi } from '../components/api';
+import { citySearchApiUrl, REACT_OPENWEATHERMAP_API_KEY } from '../components/api';
 
 interface CitySearchProps {
   onCitySelect: (lat: number, lon: number) => void;
@@ -33,14 +33,13 @@ const customStyles = {
 
 const CitySearch: React.FC<CitySearchProps> = ({ onCitySelect }) => {
   const [searchValue, setSearchValue] = React.useState(null);
-  const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
   const loadOptions = async (inputValue: string) => {
     if (!inputValue) return { options: [] };
 
     try {
       const response = await axios.get(
-        `${citySearchApi}?q=${inputValue}&limit=5&appid=${apiKey}`
+        `${citySearchApiUrl}?q=${inputValue}&limit=5&appid=${REACT_OPENWEATHERMAP_API_KEY}`
       );
 
       const options = response.data.map((city: any) => ({

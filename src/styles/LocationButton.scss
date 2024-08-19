@@ -2,7 +2,7 @@
 
 .location-button {
   color: $button-color;
-  font-size: 30px;
+  font-size: 20px;
   border: 1.4px solid $button-color;
   border-radius: 50%;
   width: 36px;
@@ -11,8 +11,8 @@
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  cursor: pointer;
   margin: 5px 10px 0;
+  cursor: pointer;
 
   &:hover {
     background-color: $button-hover-color;

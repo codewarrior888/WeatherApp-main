@@ -1,5 +1,5 @@
 import React from 'react';
-import { TbLocation } from "react-icons/tb";
+import { BsPinMap } from "react-icons/bs";
 import '../styles/LocationButton.scss';
 
 interface LocationButtonProps {
@@ -9,7 +9,7 @@ interface LocationButtonProps {
 const LocationButton: React.FC<LocationButtonProps> = ({ onLocationClick }) => {
   return (
     <button className="location-button" onClick={onLocationClick}>
-      <TbLocation />
+      <BsPinMap />
     </button>
   );
 };

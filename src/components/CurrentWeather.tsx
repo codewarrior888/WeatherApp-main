@@ -1,5 +1,5 @@
 import React from "react";
-import { weatherIconApi } from "../components/api";
+import { weatherIconApiUrl } from "../components/api";
 
 import '../styles/CurrentWeather.scss';
 
@@ -16,7 +16,7 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({data}) => {
                 <p className="city">{data.name}, {data.sys.country}</p>
                 <p className="temperature">{Math.round(data.main.temp)}°C</p>
                 <p className="weather-description">{data.weather[0].description}</p>
-                <img className="weather-icon" src={`${weatherIconApi}${data.weather[0].icon}@2x.png`} alt="weather" />
+                <img className="weather-icon" src={`${weatherIconApiUrl}${data.weather[0].icon}@2x.png`} alt="weather" />
                 <div className="temp-range">
                     <div className="min-temp">
                         <p className="current-label">L:</p>

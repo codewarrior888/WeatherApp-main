@@ -1,5 +1,5 @@
 import React from "react";
-import { weatherIconApi } from "../components/api";
+import { weatherIconApiUrl } from "../components/api";
 import '../styles/ForecastWeather.scss';
 
 interface ForecastWeatherProps {
@@ -15,7 +15,7 @@ const Forecast: React.FC<ForecastWeatherProps> = ({ data }) => {
                 <div className="forecast-item" key={forecast.dt}>
                     <div className="forecast-date">{["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][new Date(forecast.dt * 1000).getDay()]}</div>
                     <div className="forecast-icon">
-                        <img src={`${weatherIconApi}${forecast.weather[0].icon}@2x.png`} alt="weather" />
+                        <img src={`${weatherIconApiUrl}${forecast.weather[0].icon}@2x.png`} alt="weather" />
                     </div>
                     <div className="forecast-temperature">
                         <div className="min-temp">{Math.round(forecast.main.temp_min)}°C</div>

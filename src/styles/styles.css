@@ -292,8 +292,8 @@ html, body {
 
 .location-button {
   color: #ffffff;
-  font-size: 30px;
-  border: 1.5px solid #ffffff;
+  font-size: 20px;
+  border: 1.4px solid #ffffff;
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -301,8 +301,8 @@ html, body {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  cursor: pointer;
   margin: 5px 10px 0;
+  cursor: pointer;
 }
 .location-button:hover {
   background-color: #ffffff;
@@ -311,8 +311,8 @@ html, body {
 
 .refresh-button {
   color: #ffffff;
-  font-size: 30px;
-  border: 1.5px solid #ffffff;
+  font-size: 20px;
+  border: 1.4px solid #ffffff;
   border-radius: 50%;
   width: 36px;
   height: 36px;

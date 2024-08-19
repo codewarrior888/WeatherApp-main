@@ -7,7 +7,7 @@ import CurrentWeatherDetails from './CurrentWeatherDetails';
 import ForecastWeather from './ForecastWeather';
 import LocationButton from './LocationButton';
 import RefreshButton from './RefreshButton';
-import { forecastApi, weatherApi } from '../components/api';
+import { forecastApiUrl, weatherApiUrl, REACT_OPENWEATHERMAP_API_KEY } from '../components/api';
 
 import '../styles/App.scss';
 
@@ -18,11 +18,10 @@ const App: React.FC = () => {
   const [forecastWeather, setForecastWeather] = React.useState(null);
 
   const handleOnSearchChange = (lat: number, lon: number) => {
-    const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
     const currentTime = new Date().getTime();
   
-    const fetchCurrentWeather = fetch(`${weatherApi}?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`);
-    const fetchForecastWeather = fetch(`${forecastApi}?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`);
+    const fetchCurrentWeather = fetch(`${weatherApiUrl}?lat=${lat}&lon=${lon}&units=metric&appid=${REACT_OPENWEATHERMAP_API_KEY}`);
+    const fetchForecastWeather = fetch(`${forecastApiUrl}?lat=${lat}&lon=${lon}&units=metric&appid=${REACT_OPENWEATHERMAP_API_KEY}`);
   
     Promise.all([fetchCurrentWeather, fetchForecastWeather])
       .then(async (response) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdRefresh } from "react-icons/md";
+import { BsRepeat } from "react-icons/bs";
 import '../styles/RefreshButton.scss';
 
 interface RefreshButtonProps {
@@ -9,7 +9,7 @@ interface RefreshButtonProps {
 const RefreshButton: React.FC<RefreshButtonProps> = ({ onRefreshClick }) => {
   return (
     <button className="refresh-button" onClick={onRefreshClick}>
-      <MdRefresh />
+      <BsRepeat />
     </button>
   );
 };
